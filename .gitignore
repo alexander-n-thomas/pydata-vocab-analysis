@@ -1,5 +1,4 @@
 data
 results
-vocab-ana-ws-data.tar.gz
-vocab-ana-ws-results.tar.gz
 .ipynb_checkpoints
+my_*
