@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head><meta charset="utf-8" />
-<title>0. Introduction</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>0. Introduction</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
 
 <style type="text/css">
@@ -11,8 +13,8 @@
 *
 */
 /*!
- * Bootstrap v3.3.7 (http://getbootstrap.com)
- * Copyright 2011-2016 Twitter, Inc.
+ * Bootstrap v3.3.6 (http://getbootstrap.com)
+ * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
@@ -1107,6 +1109,7 @@ a:focus {
   text-decoration: underline;
 }
 a:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -2535,6 +2538,7 @@ select[size] {
 input[type="file"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -3025,6 +3029,7 @@ select[multiple].input-lg {
 .btn.focus,
 .btn:active.focus,
 .btn.active.focus {
+  outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
   outline-offset: -2px;
 }
@@ -8755,9 +8760,6 @@ body > #header .header-bar {
     margin-left: 10px;
   }
 }
-[dir="rtl"] #ipython_notebook {
-  float: right !important;
-}
 #noscript {
   width: auto;
   padding-top: 16px;
@@ -8960,14 +8962,8 @@ span#login_widget > .button .badge,
  *
  * Author: Jupyter Development Team
  */
-[dir="rtl"] #tabs li {
-  float: right;
-}
 ul#tabs {
   margin-bottom: 4px;
-}
-[dir="rtl"] ul#tabs {
-  margin-right: 0px;
 }
 ul#tabs a {
   padding-top: 6px;
@@ -8990,16 +8986,6 @@ ul.breadcrumb span {
 }
 .list_toolbar .tree-buttons {
   padding-top: 1px;
-}
-[dir="rtl"] .list_toolbar .tree-buttons {
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-right {
-  padding-top: 1px;
-  float: left !important;
-}
-[dir="rtl"] .list_toolbar .pull-left {
-  float: right !important;
 }
 .dynamic-buttons {
   padding-top: 3px;
@@ -9136,9 +9122,6 @@ ul.breadcrumb span {
 #tree-selector {
   padding-right: 0px;
 }
-[dir="rtl"] #tree-selector a {
-  float: right;
-}
 #button-select-all {
   min-width: 50px;
 }
@@ -9228,9 +9211,6 @@ ul#new-menu {
   left: auto;
   right: 0;
 }
-[dir="rtl"] #new-menu {
-  text-align: right;
-}
 .kernel-menu-icon {
   padding-right: 12px;
   width: 24px;
@@ -9275,9 +9255,6 @@ ul#new-menu {
 }
 #running .panel-group .panel .panel-body .list_container .list_item:last-child {
   border-bottom: 0px;
-}
-[dir="rtl"] #running .col-sm-8 {
-  float: right !important;
 }
 .delete-button {
   display: none;
@@ -9574,7 +9551,6 @@ div.cell.selected.jupyter-soft-selected {
   }
 }
 div.inner_cell {
-  min-width: 0;
   /* Old browsers */
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -9595,6 +9571,11 @@ div.inner_cell {
   box-flex: 1;
   /* Modern browsers */
   flex: 1;
+}
+@-moz-document url-prefix() {
+  div.inner_cell {
+    overflow-x: hidden;
+  }
 }
 /* input_area and input_prompt must match in top border and margin for alignment */
 div.input_area {
@@ -11265,7 +11246,7 @@ div#pager .ui-resizable-handle::after {
 }
 .shortcut_key {
   display: inline-block;
-  width: 21ex;
+  width: 20ex;
   text-align: right;
   font-family: monospace;
 }
@@ -11577,7 +11558,6 @@ ul.typeahead-list > li > a {
   box-shadow: 0px 0px 12px 1px rgba(87, 87, 87, 0.2);
 }
 .terminal-app .terminal {
-  width: 100%;
   float: left;
   font-family: monospace;
   color: white;
@@ -11591,9 +11571,6 @@ ul.typeahead-list > li > a {
 .terminal-app .terminal dummy-screen {
   line-height: 1em;
   font-size: 14px;
-}
-.terminal-app .terminal .xterm-rows {
-  padding: 10px;
 }
 .terminal-app .terminal-cursor {
   color: black;
@@ -11654,10 +11631,8 @@ ul.typeahead-list > li > a {
 .highlight .mh { color: #666666 } /* Literal.Number.Hex */
 .highlight .mi { color: #666666 } /* Literal.Number.Integer */
 .highlight .mo { color: #666666 } /* Literal.Number.Oct */
-.highlight .sa { color: #BA2121 } /* Literal.String.Affix */
 .highlight .sb { color: #BA2121 } /* Literal.String.Backtick */
 .highlight .sc { color: #BA2121 } /* Literal.String.Char */
-.highlight .dl { color: #BA2121 } /* Literal.String.Delimiter */
 .highlight .sd { color: #BA2121; font-style: italic } /* Literal.String.Doc */
 .highlight .s2 { color: #BA2121 } /* Literal.String.Double */
 .highlight .se { color: #BB6622; font-weight: bold } /* Literal.String.Escape */
@@ -11668,11 +11643,9 @@ ul.typeahead-list > li > a {
 .highlight .s1 { color: #BA2121 } /* Literal.String.Single */
 .highlight .ss { color: #19177C } /* Literal.String.Symbol */
 .highlight .bp { color: #008000 } /* Name.Builtin.Pseudo */
-.highlight .fm { color: #0000FF } /* Name.Function.Magic */
 .highlight .vc { color: #19177C } /* Name.Variable.Class */
 .highlight .vg { color: #19177C } /* Name.Variable.Global */
 .highlight .vi { color: #19177C } /* Name.Variable.Instance */
-.highlight .vm { color: #19177C } /* Name.Variable.Magic */
 .highlight .il { color: #666666 } /* Literal.Number.Integer.Long */
     </style>
 <style type="text/css">
@@ -11726,7 +11699,9 @@ body {
 div#notebook {
   overflow: visible;
   border-top: none;
-}@media print {
+}
+
+@media print {
   div.cell {
     display: block;
     page-break-inside: avoid;
@@ -11747,7 +11722,7 @@ div#notebook {
 
 <!-- Loading mathjax macro -->
 <!-- Load mathjax -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_HTML"></script>
+    <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML"></script>
     <!-- MathJax configuration -->
     <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
@@ -11771,11 +11746,12 @@ div#notebook {
   <div tabindex="-1" id="notebook" class="border-box-sizing">
     <div class="container" id="notebook-container">
 
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h1 id="Vocabulary-Analysis-Workshop">Vocabulary Analysis Workshop<a class="anchor-link" href="#Vocabulary-Analysis-Workshop">&#194;&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#194;&#182;</a></h2><p>In the initial analysis of a data set it is useful to gather informative summaries. This includes evaluating the available fields, by finding unique counts or by calculating summary statistics such as averages for numerical fields. These summaries help in understanding what is in the data itself, the underlying quality, and illuminate potential paths for further exploration. In structured data, this a straightforward task, but for unstructured text, different types of summaries are needed.</p>
+<h1 id="Vocabulary-Analysis-Workshop">Vocabulary Analysis Workshop<a class="anchor-link" href="#Vocabulary-Analysis-Workshop">&#182;</a></h1><h2 id="Introduction">Introduction<a class="anchor-link" href="#Introduction">&#182;</a></h2><p>In the initial analysis of a data set it is useful to gather informative summaries. This includes evaluating the available fields, by finding unique counts or by calculating summary statistics such as averages for numerical fields. These summaries help in understanding what is in the data itself, the underlying quality, and illuminate potential paths for further exploration. In structured data, this a straightforward task, but for unstructured text, different types of summaries are needed.</p>
 <p>Some useful examples for text data include a count of the number of documents in which a term occurs, and the number of times a term occurs in a document. It is still up to use figure out what a <em>term</em> is, and how to extract it from the text.</p>
 <p>Since vocabulary terms often have variant forms, e.g. “performs” and “performing”, it is useful to pre-process and combine these forms before computing distributions.</p>
 <p>Oftentimes, we want to look at sequences of words, for example we may want to count the number of times “data science” occurs, and not just “data” and “science”.</p>
@@ -11788,18 +11764,33 @@ div#notebook {
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Outline">Outline<a class="anchor-link" href="#Outline">&#194;&#182;</a></h3><h4 id="0.-Introduction">0. <a href="0. Introduction.ipynb">Introduction</a><a class="anchor-link" href="#0.-Introduction">&#194;&#182;</a></h4><p>In this section we will cover the outline and motivation of the tutorial, as well as introduce the data set we will be using.</p>
-<h4 id="1.-Tokenization">1. <a href="1. Tokenization.ipynb">Tokenization</a><a class="anchor-link" href="#1.-Tokenization">&#194;&#182;</a></h4><p>In this section we will cover tokenization. (exercise 1)</p>
-<h4 id="2.-TF.IDF">2. <a href="2. TF.IDF.ipynb">TF.IDF</a><a class="anchor-link" href="#2.-TF.IDF">&#194;&#182;</a></h4><p>In this section we will cover how to look at vocabulary with TF.IDF.</p>
-<h4 id="3.-Visualization">3. <a href="3. Visualization.ipynb">Visualization</a><a class="anchor-link" href="#3.-Visualization">&#194;&#182;</a></h4><p>In this section we will cover how to visualize our vocabulary with TF.IDF.</p>
-<h4 id="4.-Stemming-and-Lemmatization">4. <a href="4. Stemming and Lemmatization">Stemming and Lemmatization</a><a class="anchor-link" href="#4.-Stemming-and-Lemmatization">&#194;&#182;</a></h4><p>In this section we will cover stemming and lemmatization to normalize our vocabulary. (exercise 2)</p>
-<h4 id="5.-Stop-Words">5. <a href="5. Stop Words.ipynb">Stop Words</a><a class="anchor-link" href="#5.-Stop-Words">&#194;&#182;</a></h4><p>In this section we will cover removal of "less useful" words. (exercise 3)</p>
-<h4 id="6.-n-Grams">6. <a href="6. n-Grams.ipynb">n-Grams</a><a class="anchor-link" href="#6.-n-Grams">&#194;&#182;</a></h4><p>In this section we will cover word sequences and introduce sentence boundary detection.</p>
-<h4 id="7.-Modeling">7. <a href="7. Modeling.ipynb">Modeling</a><a class="anchor-link" href="#7.-Modeling">&#194;&#182;</a></h4><p>In this section we will cover using our analysis to build models for predicting our segments. (exercise 4)</p>
+<h3 id="Outline">Outline<a class="anchor-link" href="#Outline">&#182;</a></h3><h4 id="0.-Introduction">0. <a href="0. Introduction.ipynb">Introduction</a><a class="anchor-link" href="#0.-Introduction">&#182;</a></h4><p>In this section we will cover the outline and motivation of the tutorial, as well as introduce the data set we will be using.</p>
+<h4 id="1.-Tokenization">1. <a href="1. Tokenization.ipynb">Tokenization</a><a class="anchor-link" href="#1.-Tokenization">&#182;</a></h4><p>In this section we will cover tokenization. (exercise 1)</p>
+<h4 id="2.-TF.IDF">2. <a href="2. TF.IDF.ipynb">TF.IDF</a><a class="anchor-link" href="#2.-TF.IDF">&#182;</a></h4><p>In this section we will cover how to look at vocabulary with TF.IDF.</p>
+<h4 id="3.-Visualization">3. <a href="3. Visualization.ipynb">Visualization</a><a class="anchor-link" href="#3.-Visualization">&#182;</a></h4><p>In this section we will cover how to visualize our vocabulary with TF.IDF.</p>
+<h4 id="4.-Stemming-and-Lemmatization">4. <a href="4. Stemming and Lemmatization">Stemming and Lemmatization</a><a class="anchor-link" href="#4.-Stemming-and-Lemmatization">&#182;</a></h4><p>In this section we will cover stemming and lemmatization to normalize our vocabulary. (exercise 2)</p>
+<h4 id="5.-Stop-Words">5. <a href="5. Stop Words.ipynb">Stop Words</a><a class="anchor-link" href="#5.-Stop-Words">&#182;</a></h4><p>In this section we will cover removal of "less useful" words. (exercise 3)</p>
+<h4 id="6.-n-Grams">6. <a href="6. n-Grams.ipynb">n-Grams</a><a class="anchor-link" href="#6.-n-Grams">&#182;</a></h4><p>In this section we will cover word sequences and introduce sentence boundary detection.</p>
+<h4 id="7.-Modeling">7. <a href="7. Modeling.ipynb">Modeling</a><a class="anchor-link" href="#7.-Modeling">&#182;</a></h4><p>In this section we will cover using our analysis to build models for predicting our segments. (exercise 4)</p>
+
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h3 id="NLP---fishing-for-meaning">NLP - fishing for meaning<a class="anchor-link" href="#NLP---fishing-for-meaning">&#182;</a></h3><p>An analogy I like to use when talking about NLP is looking forfishing.</p>
+<p>All of the techniques we will cover in this talk can (and should) be tuned to the particular language, data, and problem that is being examined. If you are trying to find a sunfish you don't want to go buy all the equipment looking going down to the midnight zone. Similarly, if you are looking for angler fish, you will not find them by just looking at the surface.</p>
+<p><img src="https://www.nwf.org/~/media/Content/Screen%20Captures/Kids/Ranger-Rick-Spreads/ocean2-JJ2014.ashx"/></p>
+<p>[<a href="https://www.nwf.org/Kids/Ranger-Rick/Animals/Mixture-of-Species/Ocean-Animals.aspx">National Wildlife Kids - Ocean Animals</a>]</p>
+<p>We are looking to do exploratory analysis here, so we are looking at the surface.</p>
 
 </div>
 </div>
@@ -11822,11 +11813,12 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Data">Data<a class="anchor-link" href="#Data">&#194;&#182;</a></h3><p>The data we will be looking at is from a HackerRank competition Indeed had earlier this year. It contains the text of some job descriptions as well as some other attributes.</p>
+<h3 id="Data">Data<a class="anchor-link" href="#Data">&#182;</a></h3><p>The data we will be looking at is from a HackerRank competition Indeed had earlier this year. It contains the text of some job descriptions as well as some other attributes.</p>
 <p><strong>Columns</strong></p>
 <ul>
 <li>id: a generated ID for each job description</li>
@@ -11870,11 +11862,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[3]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[3]:</div>
 
 <div class="output_html rendered_html output_subarea output_execute_result">
 <div>
@@ -12490,11 +12478,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt output_prompt">Out[4]:</div>
-
-
+<div class="output_area"><div class="prompt output_prompt">Out[4]:</div>
 
 
 <div class="output_text output_subarea output_execute_result">
@@ -12507,13 +12491,14 @@ div#notebook {
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p>Exploring and summarizing structured data is something most of us are familiar with. If the data is categorical or boolean we can report percentages, and display a pie chart for the values. This gives us a pretty good idea of the data.</p>
 <p>For numeric columns we can look at the mean and standard deviation, as well as look at percentiles. We can bin the values and plot a histogram.</p>
-<h3 id="How-do-we-explore-and-summarize-text?">How do we explore and summarize text?<a class="anchor-link" href="#How-do-we-explore-and-summarize-text?">&#194;&#182;</a></h3><p>Let's try looking at character length of documents, and use our knowledge of how to explore numeric data.</p>
+<h3 id="How-do-we-explore-and-summarize-text?">How do we explore and summarize text?<a class="anchor-link" href="#How-do-we-explore-and-summarize-text?">&#182;</a></h3><p>Let's try looking at character length of documents, and use our knowledge of how to explore numeric data.</p>
 
 </div>
 </div>
@@ -12539,11 +12524,7 @@ div#notebook {
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>count     4375.000000
 mean      1788.295314
@@ -12558,11 +12539,7 @@ Name: description, dtype: float64
 </div>
 </div>
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -12710,7 +12687,8 @@ BiTgAWBAAh4ABiTgAWBAAh4ABiTgAWBA/x906+8IrSDdTgAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12741,11 +12719,7 @@ Let's look at just the alphanumeric characters.</p>
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>count     4375.000000
 mean      1451.384686
@@ -12760,11 +12734,7 @@ Name: description, dtype: float64
 </div>
 </div>
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
+<div class="output_area"><div class="prompt"></div>
 
 
 <div class="output_png output_subarea ">
@@ -12915,7 +12885,8 @@ mAAAAABJRU5ErkJggg==
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12937,7 +12908,8 @@ mAAAAABJRU5ErkJggg==
 </div>
 </div>
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
@@ -12967,11 +12939,7 @@ mAAAAABJRU5ErkJggg==
 <div class="output">
 
 
-<div class="output_area">
-
-<div class="prompt"></div>
-
-
+<div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>================================================================================
 id =  2742
@@ -12996,19 +12964,16 @@ Habermaass Corporation, located in Skaneateles, NY is looking for warehouse help
 </div>
 
 </div>
-<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="NEXT-=&gt;--1.-Tokenization">NEXT =&gt;  <a href="1. Tokenization.ipynb">1. Tokenization</a><a class="anchor-link" href="#NEXT-=&gt;--1.-Tokenization">&#194;&#182;</a></h3>
+<h3 id="NEXT-=&gt;--1.-Tokenization">NEXT =&gt;  <a href="1. Tokenization.ipynb">1. Tokenization</a><a class="anchor-link" href="#NEXT-=&gt;--1.-Tokenization">&#182;</a></h3>
 </div>
 </div>
 </div>
     </div>
   </div>
 </body>
-
- 
-
-
 </html>
