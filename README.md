@@ -1,3 +1,6 @@
+### Note
+I will be updating this repo to handle some platform compatibility issues soon
+
 ## Abstract
 In the initial analysis of a data set it is useful to gather informative 
 summaries. This includes evaluating the available fields, by finding unique 
