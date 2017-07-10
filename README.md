@@ -29,7 +29,7 @@ NLTK is installed with Anaconda, the data may not be, so attendees should
 install at least the "book" collection of NLTK data (general NLTK data 
 installation instructions). The only additional library that the tutorial will 
 use is wordcloud [word_cloud](https://github.com/amueller/word_cloud) which can be installed by following the instructions 
-on the linked github page.
+on the linked github page.  
 **Start with Setup.ipynb**
 
 ## Docker Notes
