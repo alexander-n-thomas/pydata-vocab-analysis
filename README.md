@@ -1,3 +1,6 @@
+### Note
+I will be updating this repo to handle some platform compatibility issues soon
+
 ## Abstract
 In the initial analysis of a data set it is useful to gather informative 
 summaries. This includes evaluating the available fields, by finding unique 
@@ -25,5 +28,5 @@ tutorial will use: numpy, pandas, matplotlib, scikit-learn, and NLTK. Although
 NLTK is installed with Anaconda, the data may not be, so attendees should 
 install at least the "book" collection of NLTK data (general NLTK data 
 installation instructions). The only additional library that the tutorial will 
-use is wordcloud (github) which can be installed by following the instructions 
+use is wordcloud (https://github.com/amueller/word_cloud) which can be installed by following the instructions 
 on the linked github page.
