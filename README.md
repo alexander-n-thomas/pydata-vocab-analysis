@@ -30,3 +30,10 @@ install at least the "book" collection of NLTK data (general NLTK data
 installation instructions). The only additional library that the tutorial will 
 use is wordcloud (https://github.com/amueller/word_cloud) which can be installed by following the instructions 
 on the linked github page.
+
+## Docker Notes
+```bash
+docker build -t pydata-vocab-ana .
+docker run -p 8889:8888 --name vocabana pydata-vocab-ana
+```
+To avoid OOM killer, shutdown each notebook when you are finished before continuing to the next.
